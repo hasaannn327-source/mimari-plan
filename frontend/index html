@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamik Daire Planı Seçimi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="container">
+        <h1>Maliyet Hesabı İçin Örnek Daire Planları</h1>
+        <p>Projenize uygun daire tipi ve arsanızın yola bakan cephe sayısını seçerek örnek planı görüntüleyin.</p>
+        
+        <div class="kontrol-paneli">
+            <div class="secim-kutusu">
+                <label for="tipSecici">Daire Tipi Seçin:</label>
+                <select id="tipSecici">
+                    <option value="3+1">3+1 Daire</option>
+                    <option value="2+1">2+1 Daire</option>
+                    <option value="4+2">4+2 Dubleks</option>
+                </select>
+            </div>
+            <div class="secim-kutusu">
+                <label for="cepheSecici">Yola Cephe Sayısı:</label>
+                <select id="cepheSecici">
+                    <option value="1">1 (Tek Cephe)</option>
+                    <option value="2">2 (Çift Cephe / Köşe)</option>
+                </select>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div id="hataMesaji" class="hata-mesaji"></div>
+        
+        <div class="plan-gosterici">
+            <div class="gorsel-bolumu">
+                <img id="planGorseli" src="" alt="Daire Planı Görseli">
+            </div>
+            <div class="bilgi-bolumu">
+                <h2 id="planAdi"></h2>
+                <div id="planDetaylari">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
