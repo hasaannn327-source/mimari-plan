@@ -1,20 +1,24 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+const generatePlan = require("./drawPlanSVG");
+
 const app = express();
-const cors = require('cors');
-const planData = require('./planData.json');
+const PORT = 3000;
 
 app.use(cors());
+app.use(express.json());
 
-app.get('/api/plan/:tip', (req, res) => {
-  const tip = req.params.tip;
-  const plan = planData.find(p => p.tip === tip);
-  if (plan) {
-    res.json(plan);
-  } else {
-    res.status(404).json({ error: 'Plan bulunamadı' });
+app.post("/api/plan", (req, res) => {
+  const { daireTipi, cepheSayisi } = req.body;
+  const svg = generatePlan(daireTipi, cepheSayisi);
+
+  if (!svg) {
+    return res.status(404).json({ error: "Uygun plan bulunamadı" });
   }
+
+  res.send(svg);
 });
 
-app.listen(3001, () => {
-  console.log('API 3001 portunda çalışıyor');
+app.listen(PORT, () => {
+  console.log(`Server çalışıyor: http://localhost:${PORT}`);
 });
