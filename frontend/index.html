@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mimari Plan Seçimi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Mimari Plan Seç</h1>
+
+    <div class="kontrol-paneli">
+      <div class="secim-kutusu">
+        <label for="planTipi">Daire Tipi:</label>
+        <select id="planTipi">
+          <option value="2+1">2+1</option>
+          <option value="3+1">3+1</option>
+        </select>
+      </div>
+
+      <div class="secim-kutusu">
+        <label for="m2">Metrekare:</label>
+        <select id="m2">
+          <option value="85">85 m²</option>
+          <option value="100">100 m²</option>
+          <option value="120">120 m²</option>
+        </select>
+      </div>
+
+      <div class="secim-kutusu">
+        <label for="kat">Kat Planı:</label>
+        <select id="kat">
+          <option value="tek">Tek Daire</option>
+          <option value="cift">4 Daire Üzeri</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="hata-mesaji" id="hataMesaji">Plan bulunamadı. Lütfen seçimleri kontrol edin.</div>
+
+    <hr />
+
+    <div class="plan-gosterici" id="planGosterici" style="display:none;">
+      <div class="gorsel-bolumu">
+        <img id="planGorseli" src="" alt="Plan Görseli" />
+      </div>
+      <div class="bilgi-bolumu" id="planDetaylari">
+        <!-- Dinamik olarak JS ile dolacak -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
