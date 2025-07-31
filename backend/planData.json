@@ -1,11 +1,30 @@
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
+[
+  {
+    "tip": "2+1",
+    "m2": 90,
+    "odaSayisi": 2,
+    "salonSayisi": 1,
+    "banyoSayisi": 1,
+    "planGorseli": "https://example.com/plan-2plus1.jpg",
+    "ozellikler": [
+      "Amerikan Mutfak",
+      "Balkon",
+      "Vestiyer",
+      "Doğalgaz Tesisatı"
+    ]
   },
-  "dependencies": {
-    "express": "^4.18.2"
+  {
+    "tip": "3+1",
+    "m2": 120,
+    "odaSayisi": 3,
+    "salonSayisi": 1,
+    "banyoSayisi": 2,
+    "planGorseli": "https://example.com/plan-3plus1.jpg",
+    "ozellikler": [
+      "Ayrı Mutfak",
+      "Ebeveyn Banyosu",
+      "Geniş Balkon",
+      "Kiler"
+    ]
   }
-}
+]
