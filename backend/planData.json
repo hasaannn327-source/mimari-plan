@@ -1,30 +1,30 @@
-[
-  {
-    "tip": "2+1",
-    "m2": 90,
-    "odaSayisi": 2,
-    "salonSayisi": 1,
-    "banyoSayisi": 1,
-    "planGorseli": "https://example.com/plan-2plus1.jpg",
-    "ozellikler": [
-      "Amerikan Mutfak",
-      "Balkon",
-      "Vestiyer",
-      "Doğalgaz Tesisatı"
-    ]
+{
+  "2+1": {
+    "1": {
+      "genislik": 400,
+      "yukseklik": 200,
+      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo"],
+      "svgRenk": "#b3e5fc"
+    },
+    "2": {
+      "genislik": 400,
+      "yukseklik": 250,
+      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo", "Balkon"],
+      "svgRenk": "#c8e6c9"
+    }
   },
-  {
-    "tip": "3+1",
-    "m2": 120,
-    "odaSayisi": 3,
-    "salonSayisi": 1,
-    "banyoSayisi": 2,
-    "planGorseli": "https://example.com/plan-3plus1.jpg",
-    "ozellikler": [
-      "Ayrı Mutfak",
-      "Ebeveyn Banyosu",
-      "Geniş Balkon",
-      "Kiler"
-    ]
+  "3+1": {
+    "2": {
+      "genislik": 450,
+      "yukseklik": 300,
+      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon"],
+      "svgRenk": "#ffe082"
+    },
+    "3": {
+      "genislik": 500,
+      "yukseklik": 350,
+      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon", "Antre"],
+      "svgRenk": "#ffccbc"
+    }
   }
-]
+}
