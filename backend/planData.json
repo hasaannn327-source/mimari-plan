@@ -1,24 +1,154 @@
 {
-  "2+1": {
-    "1": {
-      "genislik": 400,
-      "yukseklik": 200,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo"],
-      "svgRenk": "#b3e5fc"
+  "floorPlans": [
+    {
+      "id": "plan_1",
+      "apartmentType": "2+1",
+      "streetFacingSides": 1,
+      "minUsableArea": 300,
+      "maxUsableArea": 600,
+      "averageApartmentArea": 85,
+      "estimatedApartments": "3-7",
+      "name": "Tek Cepheli Küçük Blok - 2+1",
+      "description": "Tek sokağa bakan küçük apartman bloku",
+      "image": "plans/plan_1_2plus1_1side.svg",
+      "features": [
+        "Ekonomik yapım",
+        "Basit plan düzeni",
+        "Tek sokak cephesi",
+        "Küçük ölçekli proje"
+      ]
     },
-    "2": {
-      "genislik": 420,
-      "yukseklik": 250,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo", "Balkon"],
-      "svgRenk": "#c8e6c9"
+    {
+      "id": "plan_2",
+      "apartmentType": "2+1",
+      "streetFacingSides": 2,
+      "minUsableArea": 400,
+      "maxUsableArea": 800,
+      "averageApartmentArea": 85,
+      "estimatedApartments": "5-9",
+      "name": "Köşe Blok - 2+1",
+      "description": "İki sokağa bakan köşe apartman",
+      "image": "plans/plan_2_2plus1_2side.svg",
+      "features": [
+        "Köşe konumu avantajı",
+        "İki cephe ışık alımı",
+        "Orta ölçekli proje",
+        "Balkon imkanı"
+      ]
+    },
+    {
+      "id": "plan_3",
+      "apartmentType": "2+1",
+      "streetFacingSides": 3,
+      "minUsableArea": 600,
+      "maxUsableArea": 1000,
+      "averageApartmentArea": 85,
+      "estimatedApartments": "7-12",
+      "name": "Üç Cepheli Blok - 2+1",
+      "description": "Üç sokağa bakan geniş apartman",
+      "image": "plans/plan_3_2plus1_3side.svg",
+      "features": [
+        "Mükemmel ışık alımı",
+        "Geniş balkon imkanları",
+        "Prestijli konum",
+        "Çoklu giriş seçeneği"
+      ]
+    },
+    {
+      "id": "plan_4",
+      "apartmentType": "3+1",
+      "streetFacingSides": 1,
+      "minUsableArea": 450,
+      "maxUsableArea": 800,
+      "averageApartmentArea": 110,
+      "estimatedApartments": "4-7",
+      "name": "Tek Cepheli Orta Blok - 3+1",
+      "description": "Tek sokağa bakan orta büyüklük apartman",
+      "image": "plans/plan_4_3plus1_1side.svg",
+      "features": [
+        "Geniş daire planları",
+        "3 yatak odası",
+        "Aile dostu tasarım",
+        "Uygun maliyetli"
+      ]
+    },
+    {
+      "id": "plan_5",
+      "apartmentType": "3+1",
+      "streetFacingSides": 2,
+      "minUsableArea": 600,
+      "maxUsableArea": 1200,
+      "averageApartmentArea": 110,
+      "estimatedApartments": "5-11",
+      "name": "Köşe Büyük Blok - 3+1",
+      "description": "İki sokağa bakan büyük apartman",
+      "image": "plans/plan_5_3plus1_2side.svg",
+      "features": [
+        "Lüks daire planları",
+        "Geniş balkon alanları",
+        "İki cephe avantajı",
+        "Prestijli yaşam"
+      ]
+    },
+    {
+      "id": "plan_6",
+      "apartmentType": "3+1",
+      "streetFacingSides": 4,
+      "minUsableArea": 800,
+      "maxUsableArea": 1500,
+      "averageApartmentArea": 110,
+      "estimatedApartments": "7-14",
+      "name": "Dörtgen Lüks Blok - 3+1",
+      "description": "Dört sokağa bakan lüks apartman kompleksi",
+      "image": "plans/plan_6_3plus1_4side.svg",
+      "features": [
+        "Premium lokasyon",
+        "360 derece ışık",
+        "Geniş ortak alanlar",
+        "Lüks yaşam standardı"
+      ]
+    },
+    {
+      "id": "plan_7",
+      "apartmentType": "1+1",
+      "streetFacingSides": 1,
+      "minUsableArea": 200,
+      "maxUsableArea": 400,
+      "averageApartmentArea": 60,
+      "estimatedApartments": "3-7",
+      "name": "Kompakt Blok - 1+1",
+      "description": "Tek kişilik veya çift için kompakt apartman",
+      "image": "plans/plan_7_1plus1_1side.svg",
+      "features": [
+        "Ekonomik seçenek",
+        "Genç profesyoneller için",
+        "Düşük işletme gideri",
+        "Şehir merkezi uygun"
+      ]
+    },
+    {
+      "id": "plan_8",
+      "apartmentType": "4+1",
+      "streetFacingSides": 2,
+      "minUsableArea": 800,
+      "maxUsableArea": 1600,
+      "averageApartmentArea": 140,
+      "estimatedApartments": "6-11",
+      "name": "Lüks Köşe Blok - 4+1",
+      "description": "Büyük aileler için lüks apartman",
+      "image": "plans/plan_8_4plus1_2side.svg",
+      "features": [
+        "4 yatak odası",
+        "Geniş salon",
+        "Ana banyo + lavabo",
+        "Büyük balkonlar"
+      ]
     }
-  },
-  "3+1": {
-    "2": {
-      "genislik": 500,
-      "yukseklik": 300,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon"],
-      "svgRenk": "#ffe082"
-    }
+  ],
+  "apartmentTypeAreas": {
+    "1+1": 60,
+    "2+1": 85,
+    "3+1": 110,
+    "4+1": 140
   }
 }

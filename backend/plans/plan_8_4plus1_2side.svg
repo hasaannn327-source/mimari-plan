@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .plan-title { font: bold 18px Arial; fill: #34495e; }
+      .room-label { font: 12px Arial; fill: #34495e; }
+      .spec-text { font: 10px Arial; fill: #7f8c8d; }
+      .building-outline { fill: #fff3e0; stroke: #2c3e50; stroke-width: 2; }
+      .room-divider { stroke: #2c3e50; stroke-width: 1; fill: none; }
+      .street-marker { fill: #e74c3c; font: bold 10px Arial; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="600" height="400" fill="#ecf0f1"/>
+  
+  <!-- Title -->
+  <text x="300" y="25" text-anchor="middle" class="plan-title">Lüks Köşe Blok - 4+1</text>
+  
+  <!-- Main building outline -->
+  <rect x="20" y="50" width="560" height="300" class="building-outline"/><text x="30" y="45" class="street-marker">SOKAK</text><text x="540" y="45" class="street-marker">SOKAK</text>
+      <line x1="132" y1="50" x2="132" y2="300" class="room-divider"/>
+      <line x1="244" y1="50" x2="244" y2="300" class="room-divider"/>
+      <line x1="356" y1="50" x2="356" y2="300" class="room-divider"/>
+      <line x1="468" y1="50" x2="468" y2="300" class="room-divider"/>
+      <line x1="20" y1="133.33333333333331" x2="580" y2="133.33333333333331" class="room-divider"/>
+      <line x1="20" y1="216.66666666666666" x2="580" y2="216.66666666666666" class="room-divider"/>
+      
+      <text x="76" y="91.66666666666666" text-anchor="middle" class="room-label">Giriş</text>
+      <text x="188" y="91.66666666666666" text-anchor="middle" class="room-label">Salon</text>
+      <text x="76" y="175" text-anchor="middle" class="room-label">Mutfak</text>
+      <text x="188" y="175" text-anchor="middle" class="room-label">Ana Yatak</text>
+      <text x="300" y="175" text-anchor="middle" class="room-label">Yatak Odası 2</text>
+      <text x="412" y="175" text-anchor="middle" class="room-label">Yatak Odası 3</text>
+      <text x="524" y="175" text-anchor="middle" class="room-label">Yatak Odası 4</text>
+    
+    <text x="20" y="380" class="spec-text">Alan: 800-1600 m² | Cephe: 2 | Tahmini: 6-11 daire</text>
+  </svg>
