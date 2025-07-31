@@ -3,50 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mimari Plan Seçimi</title>
+  <title>Mimari Kat Planı Önerisi Sistemi</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Mimari Plan Seç</h1>
+    <header class="header">
+      <h1>🏗️ Mimari Kat Planı Önerisi Sistemi</h1>
+      <p>Projeniz için en uygun mimari planı otomatik olarak önerelim</p>
+    </header>
 
-    <div class="kontrol-paneli">
-      <div class="secim-kutusu">
-        <label for="planTipi">Daire Tipi:</label>
-        <select id="planTipi">
-          <option value="2+1">2+1</option>
-          <option value="3+1">3+1</option>
-        </select>
+    <div class="input-section">
+      <h2>📋 Proje Bilgileri</h2>
+      
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="totalBaseArea">Toplam Taban Alanı (m²):</label>
+          <input 
+            type="number" 
+            id="totalBaseArea" 
+            placeholder="Örn: 500" 
+            min="50" 
+            max="10000"
+            value="500"
+          />
+          <small>Projenizin toplam taban alanını girin</small>
+        </div>
+
+        <div class="input-group">
+          <label for="commonAreaPercentage">Ortak Alan Yüzdesi (%):</label>
+          <input 
+            type="number" 
+            id="commonAreaPercentage" 
+            placeholder="Örn: 10" 
+            min="0" 
+            max="50" 
+            step="0.5"
+            value="10"
+          />
+          <small>Koridor, asansör vb. ortak alanların yüzdesi</small>
+        </div>
+
+        <div class="input-group">
+          <label for="streetFacingSides">Cephe Sayısı:</label>
+          <select id="streetFacingSides">
+            <option value="1">1 Cephe</option>
+            <option value="2" selected>2 Cephe</option>
+            <option value="3">3 Cephe</option>
+            <option value="4">4 Cephe</option>
+          </select>
+          <small>Binanın kaç cephesi caddeye bakıyor?</small>
+        </div>
+
+        <div class="input-group">
+          <label for="apartmentType">Daire Tipi:</label>
+          <select id="apartmentType">
+            <option value="2+1" selected>2+1</option>
+            <option value="3+1">3+1</option>
+          </select>
+          <small>Hangi tip daire planı arıyorsunuz?</small>
+        </div>
       </div>
 
-      <div class="secim-kutusu">
-        <label for="m2">Metrekare:</label>
-        <select id="m2">
-          <option value="85">85 m²</option>
-          <option value="100">100 m²</option>
-          <option value="120">120 m²</option>
-        </select>
+      <button id="calculateBtn" class="calculate-btn">
+        🔍 Uygun Planı Bul
+      </button>
+    </div>
+
+    <div class="loading-section" id="loadingSection" style="display: none;">
+      <div class="loading-spinner"></div>
+      <p>En uygun plan hesaplanıyor...</p>
+    </div>
+
+    <div class="results-section" id="resultsSection" style="display: none;">
+      <div class="calculation-summary">
+        <h2>📊 Hesaplama Özeti</h2>
+        <div class="summary-grid" id="summaryGrid">
+          <!-- Dinamik olarak doldurulacak -->
+        </div>
       </div>
 
-      <div class="secim-kutusu">
-        <label for="kat">Kat Planı:</label>
-        <select id="kat">
-          <option value="tek">Tek Daire</option>
-          <option value="cift">4 Daire Üzeri</option>
-        </select>
+      <div class="plan-display" id="planDisplay">
+        <h2>🏠 Önerilen Mimari Plan</h2>
+        <div class="plan-container">
+          <div class="plan-visual" id="planVisual">
+            <!-- SVG plan burada gösterilecek -->
+          </div>
+          <div class="plan-details" id="planDetails">
+            <!-- Plan detayları burada gösterilecek -->
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="hata-mesaji" id="hataMesaji">Plan bulunamadı. Lütfen seçimleri kontrol edin.</div>
-
-    <hr />
-
-    <div class="plan-gosterici" id="planGosterici" style="display:none;">
-      <div class="gorsel-bolumu">
-        <img id="planGorseli" src="" alt="Plan Görseli" />
+    <div class="error-section" id="errorSection" style="display: none;">
+      <div class="error-message" id="errorMessage">
+        <!-- Hata mesajları burada gösterilecek -->
       </div>
-      <div class="bilgi-bolumu" id="planDetaylari">
-        <!-- Dinamik olarak JS ile dolacak -->
+    </div>
+
+    <div class="no-plan-section" id="noPlanSection" style="display: none;">
+      <div class="no-plan-message">
+        <h2>😔 Uygun Plan Bulunamadı</h2>
+        <p>Belirtilen kriterlere uygun plan bulunamadı. Lütfen parametreleri değiştirip tekrar deneyin.</p>
+        <div class="suggestions">
+          <h3>💡 Öneriler:</h3>
+          <ul>
+            <li>Toplam alanı artırın</li>
+            <li>Ortak alan yüzdesini azaltın</li>
+            <li>Farklı bir daire tipi seçin</li>
+            <li>Cephe sayısını değiştirin</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

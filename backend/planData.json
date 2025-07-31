@@ -1,24 +1,100 @@
 {
-  "2+1": {
-    "1": {
-      "genislik": 400,
-      "yukseklik": 200,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo"],
-      "svgRenk": "#b3e5fc"
+  "floorPlans": [
+    {
+      "id": "plan_001",
+      "name": "Modern 2+1 Tek Cephe",
+      "apartmentType": "2+1",
+      "streetFacingSides": 1,
+      "minArea": 80,
+      "maxArea": 100,
+      "averageAreaPerApartment": 90,
+      "description": "Tek cepheli modern 2+1 daire planı",
+      "imageUrl": "/images/plan_001.svg",
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo"],
+      "features": ["Balkon", "Depo"],
+      "color": "#b3e5fc"
     },
-    "2": {
-      "genislik": 420,
-      "yukseklik": 250,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo", "Balkon"],
-      "svgRenk": "#c8e6c9"
+    {
+      "id": "plan_002",
+      "name": "Geniş 2+1 Çift Cephe",
+      "apartmentType": "2+1",
+      "streetFacingSides": 2,
+      "minArea": 85,
+      "maxArea": 110,
+      "averageAreaPerApartment": 95,
+      "description": "Çift cepheli geniş 2+1 daire planı",
+      "imageUrl": "/images/plan_002.svg",
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo", "Balkon"],
+      "features": ["Balkon", "Depo", "Giriş Holü"],
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "plan_003",
+      "name": "Lüks 3+1 Üç Cephe",
+      "apartmentType": "3+1",
+      "streetFacingSides": 3,
+      "minArea": 120,
+      "maxArea": 150,
+      "averageAreaPerApartment": 135,
+      "description": "Üç cepheli lüks 3+1 daire planı",
+      "imageUrl": "/images/plan_003.svg",
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon"],
+      "features": ["Balkon", "Depo", "Giriş Holü", "Çamaşır Odası"],
+      "color": "#ffe082"
+    },
+    {
+      "id": "plan_004",
+      "name": "Villa Tarzı 3+1 Dört Cephe",
+      "apartmentType": "3+1",
+      "streetFacingSides": 4,
+      "minArea": 140,
+      "maxArea": 180,
+      "averageAreaPerApartment": 160,
+      "description": "Dört cepheli villa tarzı 3+1 daire planı",
+      "imageUrl": "/images/plan_004.svg",
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Çalışma Odası"],
+      "features": ["Balkon", "Teras", "Depo", "Giriş Holü", "Çamaşır Odası", "Misafir Tuvaleti"],
+      "color": "#f8bbd9"
+    },
+    {
+      "id": "plan_005",
+      "name": "Kompakt 2+1 Tek Cephe",
+      "apartmentType": "2+1",
+      "streetFacingSides": 1,
+      "minArea": 70,
+      "maxArea": 85,
+      "averageAreaPerApartment": 75,
+      "description": "Kompakt tek cepheli 2+1 daire planı",
+      "imageUrl": "/images/plan_005.svg",
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo"],
+      "features": ["Balkon"],
+      "color": "#d1c4e9"
+    },
+    {
+      "id": "plan_006",
+      "name": "Aile 3+1 Çift Cephe",
+      "apartmentType": "3+1",
+      "streetFacingSides": 2,
+      "minArea": 110,
+      "maxArea": 130,
+      "averageAreaPerApartment": 120,
+      "description": "Aile için ideal çift cepheli 3+1 daire planı",
+      "imageUrl": "/images/plan_006.svg",
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo"],
+      "features": ["Balkon", "Depo", "Giriş Holü"],
+      "color": "#ffccbc"
     }
-  },
-  "3+1": {
-    "2": {
-      "genislik": 500,
-      "yukseklik": 300,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon"],
-      "svgRenk": "#ffe082"
+  ],
+  "apartmentTypeAverages": {
+    "2+1": {
+      "minArea": 70,
+      "maxArea": 110,
+      "averageArea": 90
+    },
+    "3+1": {
+      "minArea": 110,
+      "maxArea": 180,
+      "averageArea": 140
     }
   }
 }
