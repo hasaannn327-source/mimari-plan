@@ -1,0 +1,6 @@
+nohup: ignoring input
+Mimari Plan Önerisi Sistemi çalışıyor: http://localhost:3000
+API Endpoints:
+- POST /api/plan-suggestion - Ana plan önerisi
+- GET /api/plans - Plan listesi
+- GET /api/apartment-types - Daire tipleri

@@ -1,98 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px_10px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-h1, h2 {
-    color: #005a87;
+h1 {
+  text-align: center;
+  color: #333;
+  padding: 30px 20px 10px;
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
-.kontrol-paneli {
-    display: flex;
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.input-panel {
+  background: #f8f9fa;
+  padding: 30px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.input-panel h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-group small {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.calculate-btn:active {
+  transform: translateY(0);
+}
+
+.results-panel {
+  padding: 30px;
+}
+
+.results-panel h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+}
+
+.calculations {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 1px solid #e9ecef;
+}
+
+.calc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.calc-item:last-child {
+  border-bottom: none;
+}
+
+.calc-item .label {
+  font-weight: 600;
+  color: #333;
+}
+
+.calc-item .value {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1.1em;
+}
+
+.plan-display h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+}
+
+.plan-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.plan-svg {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-svg svg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.plan-details {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid #e9ecef;
+}
+
+.plan-details h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.plan-details ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.plan-details li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #555;
+}
+
+.plan-details li:last-child {
+  border-bottom: none;
+}
+
+.plan-details .plan-description {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  margin-top: 15px;
+}
+
+.error-message {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px;
+}
+
+.error-message h3 {
+  color: #856404;
+  margin-bottom: 10px;
+}
+
+.error-message p {
+  color: #856404;
+  margin-bottom: 15px;
+}
+
+.error-calculations {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #ffeaa7;
+}
+
+.error-calculations .calc-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #ffeaa7;
+}
+
+.error-calculations .calc-item:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    border-radius: 15px;
+  }
+  
+  h1 {
+    font-size: 2em;
+    padding: 20px 15px 10px;
+  }
+  
+  .input-panel,
+  .results-panel {
+    padding: 20px;
+  }
+  
+  .plan-container {
+    grid-template-columns: 1fr;
     gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Küçük ekranlar için */
+  }
+  
+  .plan-svg {
+    min-height: 250px;
+  }
 }
 
-.secim-kutusu {
-    flex: 1;
-    min-width: 250px;
-}
-
-.secim-kutusu label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-select {
-    width: 100%;
+@media (max-width: 480px) {
+  body {
     padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #eee;
-    margin: 20px 0;
-}
-
-.hata-mesaji {
-    display: none; /* Varsayılan olarak gizli */
-    background-color: #ffebee;
-    color: #c62828;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  .input-panel,
+  .results-panel {
     padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.plan-gosterici {
-    display: flex;
-    gap: 30px; 
-    flex-wrap: wrap; 
-}
-
-.gorsel-bolumu {
-    flex: 1; 
-    min-width: 350px; 
-}
-
-.bilgi-bolumu {
-    flex: 2;
-    min-width: 350px;
-}
-
-#planGorseli {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-#planDetaylari ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#planDetaylari li {
-    background-color: #e9f5f9;
-    padding: 8px;
-    border-radius: 4px;
-    margin-bottom: 5px;
+  }
+  
+  .calculations {
+    padding: 20px;
+  }
+  
+  .calc-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
 }

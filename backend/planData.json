@@ -1,24 +1,116 @@
 {
-  "2+1": {
-    "1": {
-      "genislik": 400,
-      "yukseklik": 200,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo"],
-      "svgRenk": "#b3e5fc"
+  "apartmentTypes": {
+    "2+1": {
+      "averageArea": 90,
+      "description": "2 yatak odası + 1 salon"
     },
-    "2": {
-      "genislik": 420,
-      "yukseklik": 250,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo", "Balkon"],
-      "svgRenk": "#c8e6c9"
+    "3+1": {
+      "averageArea": 120,
+      "description": "3 yatak odası + 1 salon"
+    },
+    "4+1": {
+      "averageArea": 150,
+      "description": "4 yatak odası + 1 salon"
     }
   },
-  "3+1": {
-    "2": {
-      "genislik": 500,
-      "yukseklik": 300,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon"],
-      "svgRenk": "#ffe082"
+  "floorPlans": [
+    {
+      "id": "plan_001",
+      "name": "Tek Cephe 2+1",
+      "apartmentType": "2+1",
+      "streetFacingSides": 1,
+      "minArea": 80,
+      "maxArea": 100,
+      "totalApartments": 1,
+      "width": 400,
+      "height": 200,
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo"],
+      "svgColor": "#b3e5fc",
+      "description": "Tek cepheli, kompakt 2+1 daire planı"
+    },
+    {
+      "id": "plan_002",
+      "name": "Çift Cephe 2+1",
+      "apartmentType": "2+1",
+      "streetFacingSides": 2,
+      "minArea": 85,
+      "maxArea": 110,
+      "totalApartments": 1,
+      "width": 420,
+      "height": 250,
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo", "Balkon"],
+      "svgColor": "#c8e6c9",
+      "description": "Çift cepheli, ferah 2+1 daire planı"
+    },
+    {
+      "id": "plan_003",
+      "name": "Çift Cephe 3+1",
+      "apartmentType": "3+1",
+      "streetFacingSides": 2,
+      "minArea": 110,
+      "maxArea": 130,
+      "totalApartments": 1,
+      "width": 500,
+      "height": 300,
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon"],
+      "svgColor": "#ffe082",
+      "description": "Çift cepheli, geniş 3+1 daire planı"
+    },
+    {
+      "id": "plan_004",
+      "name": "Üç Cephe 3+1",
+      "apartmentType": "3+1",
+      "streetFacingSides": 3,
+      "minArea": 115,
+      "maxArea": 140,
+      "totalApartments": 1,
+      "width": 550,
+      "height": 320,
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon", "Çalışma Odası"],
+      "svgColor": "#f8bbd9",
+      "description": "Üç cepheli, lüks 3+1 daire planı"
+    },
+    {
+      "id": "plan_005",
+      "name": "Dört Cephe 4+1",
+      "apartmentType": "4+1",
+      "streetFacingSides": 4,
+      "minArea": 140,
+      "maxArea": 170,
+      "totalApartments": 1,
+      "width": 600,
+      "height": 350,
+      "rooms": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Çalışma Odası", "Mutfak", "Banyo", "Balkon"],
+      "svgColor": "#d1c4e9",
+      "description": "Dört cepheli, villa tarzı 4+1 daire planı"
+    },
+    {
+      "id": "plan_006",
+      "name": "Çoklu Daire 2+1",
+      "apartmentType": "2+1",
+      "streetFacingSides": 2,
+      "minArea": 400,
+      "maxArea": 600,
+      "totalApartments": 4,
+      "width": 800,
+      "height": 400,
+      "rooms": ["4x 2+1 Daire", "Ortak Giriş", "Asansör"],
+      "svgColor": "#ffccbc",
+      "description": "4 adet 2+1 daireden oluşan kat planı"
+    },
+    {
+      "id": "plan_007",
+      "name": "Çoklu Daire 3+1",
+      "apartmentType": "3+1",
+      "streetFacingSides": 3,
+      "minArea": 500,
+      "maxArea": 800,
+      "totalApartments": 3,
+      "width": 900,
+      "height": 450,
+      "rooms": ["3x 3+1 Daire", "Ortak Giriş", "Asansör", "Ortak Alan"],
+      "svgColor": "#c5cae9",
+      "description": "3 adet 3+1 daireden oluşan kat planı"
     }
-  }
+  ]
 }
