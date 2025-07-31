@@ -7,7 +7,7 @@
       "svgRenk": "#b3e5fc"
     },
     "2": {
-      "genislik": 400,
+      "genislik": 420,
       "yukseklik": 250,
       "odalar": ["Salon", "Yatak Odası", "Çocuk Odası", "Mutfak", "Banyo", "Balkon"],
       "svgRenk": "#c8e6c9"
@@ -15,16 +15,10 @@
   },
   "3+1": {
     "2": {
-      "genislik": 450,
+      "genislik": 500,
       "yukseklik": 300,
       "odalar": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon"],
       "svgRenk": "#ffe082"
-    },
-    "3": {
-      "genislik": 500,
-      "yukseklik": 350,
-      "odalar": ["Salon", "Yatak Odası", "Çocuk Odası 1", "Çocuk Odası 2", "Mutfak", "Banyo", "Balkon", "Antre"],
-      "svgRenk": "#ffccbc"
     }
   }
 }
