@@ -1,1 +1,98 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px_10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #005a87;
+}
+
+.kontrol-paneli {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Küçük ekranlar için */
+}
+
+.secim-kutusu {
+    flex: 1;
+    min-width: 250px;
+}
+
+.secim-kutusu label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.hata-mesaji {
+    display: none; /* Varsayılan olarak gizli */
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.plan-gosterici {
+    display: flex;
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.gorsel-bolumu {
+    flex: 1; 
+    min-width: 350px; 
+}
+
+.bilgi-bolumu {
+    flex: 2;
+    min-width: 350px;
+}
+
+#planGorseli {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+#planDetaylari ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#planDetaylari li {
+    background-color: #e9f5f9;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
