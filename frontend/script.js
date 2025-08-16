@@ -126,28 +126,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function findAndDisplaySuitablePlan(netUsableArea, streetFacingSides, apartmentType) {
     try {
-      const response = await fetch(`http://localhost:3000/api/suggest-plan`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          netUsableArea: netUsableArea,
-          streetFacingSides: streetFacingSides,
-          apartmentType: apartmentType
-        })
-      });
+      // Try multiple API endpoints
+      const apiEndpoints = [
+        '/api/suggest-plan',  // Relative path (same domain)
+        'http://localhost:3000/api/suggest-plan',  // Local development
+        'https://your-domain.com/api/suggest-plan'  // Production (replace with actual domain)
+      ];
 
-      if (!response.ok) {
-        throw new Error("Plan bulunamadı");
+      let response = null;
+      let planData = null;
+
+      for (const endpoint of apiEndpoints) {
+        try {
+          console.log(`Trying API endpoint: ${endpoint}`);
+          response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              netUsableArea: netUsableArea,
+              streetFacingSides: streetFacingSides,
+              apartmentType: apartmentType
+            })
+          });
+
+          if (response.ok) {
+            planData = await response.json();
+            console.log('API response successful:', planData);
+            break;
+          }
+        } catch (endpointError) {
+          console.log(`Endpoint ${endpoint} failed:`, endpointError.message);
+          continue;
+        }
       }
 
-      const planData = await response.json();
-      displayPlan(planData);
+      if (planData) {
+        displayPlan(planData);
+      } else {
+        throw new Error("Tüm API endpoint'leri başarısız");
+      }
       
     } catch (error) {
-      // Offline mode - try to show cached plan or generate basic layout
-      console.log('API erişimi yok, offline mod aktif');
+      console.log('API erişimi yok, offline mod aktif:', error.message);
       showOfflinePlan(netUsableArea, streetFacingSides, apartmentType);
     }
   }

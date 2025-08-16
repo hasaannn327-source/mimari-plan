@@ -1,88 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .plan-title { font: bold 24px 'Segoe UI', Arial; fill: #2c3e50; }
-      .room-label { font: bold 14px 'Segoe UI', Arial; fill: #34495e; }
-      .measurement { font: 12px 'Segoe UI', Arial; fill: #7f8c8d; }
-      .legend-text { font: 12px 'Segoe UI', Arial; fill: #2c3e50; }
-      .building-outline { fill: #f3e5f5; stroke: #2c3e50; stroke-width: 3; }
-      .room-divider { stroke: #34495e; stroke-width: 2; fill: none; }
-      .door-line { stroke: #e74c3c; stroke-width: 3; fill: none; stroke-dasharray: 5,5; }
-      .window-line { stroke: #3498db; stroke-width: 2; fill: none; }
-      .balcony { fill: #a8e6cf; stroke: #27ae60; stroke-width: 2; }
-      .common-area { fill: #ffeaa7; stroke: #fdcb6e; stroke-width: 2; }
-      .stairs { fill: #dda0dd; stroke: #9b59b6; stroke-width: 2; }
-      .street-marker { fill: #e74c3c; font: bold 14px Arial; }
-      .north-arrow { fill: #2c3e50; }
+      .plan-title { font: bold 28px 'Segoe UI', Arial; fill: #1a237e; }
+      .room-label { font: bold 16px 'Segoe UI', Arial; fill: #263238; }
+      .measurement { font: 14px 'Segoe UI', Arial; fill: #546e7a; }
+      .legend-text { font: 14px 'Segoe UI', Arial; fill: #1a237e; }
+      .building-outline { fill: #f3e5f5; stroke: #1a237e; stroke-width: 4; }
+      .room-divider { stroke: #37474f; stroke-width: 3; fill: none; }
+      .door-line { stroke: #d32f2f; stroke-width: 4; fill: none; stroke-dasharray: 8,4; }
+      .window-line { stroke: #1976d2; stroke-width: 3; fill: none; }
+      .balcony { fill: #e1bee7; stroke: #388e3c; stroke-width: 3; }
+      .common-area { fill: #fff9c4; stroke: #f57f17; stroke-width: 3; }
+      .stairs { fill: #e1bee7; stroke: #7b1fa2; stroke-width: 3; }
+      .street-marker { fill: #d32f2f; font: bold 18px Arial; }
+      .north-arrow { fill: #1a237e; }
+      .grid-line { stroke: #e0e0e0; stroke-width: 1; opacity: 0.6; }
+      .furniture { fill: #f5f5f5; stroke: #757575; stroke-width: 2; }
+      .texture { fill: url(#wallTexture); }
     </style>
     
-    <!-- Door symbol -->
-    <symbol id="door" viewBox="0 0 20 20">
-      <rect x="2" y="2" width="16" height="16" fill="none" stroke="#e74c3c" stroke-width="2"/>
-      <circle cx="15" cy="10" r="2" fill="#e74c3c"/>
+    <!-- Wall texture pattern -->
+    <pattern id="wallTexture" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#f5f5f5"/>
+      <line x1="0" y1="0" x2="20" y2="20" stroke="#e0e0e0" stroke-width="1"/>
+      <line x1="20" y1="0" x2="0" y2="20" stroke="#e0e0e0" stroke-width="1"/>
+    </pattern>
+    
+    <!-- Professional door symbol -->
+    <symbol id="door" viewBox="0 0 30 30">
+      <rect x="2" y="2" width="26" height="26" fill="none" stroke="#d32f2f" stroke-width="3"/>
+      <circle cx="22" cy="15" r="3" fill="#d32f2f"/>
+      <line x1="15" y1="15" x2="22" y2="15" stroke="#d32f2f" stroke-width="2"/>
     </symbol>
     
-    <!-- Window symbol -->
-    <symbol id="window" viewBox="0 0 20 20">
-      <rect x="2" y="2" width="16" height="16" fill="none" stroke="#3498db" stroke-width="2"/>
-      <line x1="2" y1="10" x2="18" y2="10" stroke="#3498db" stroke-width="1"/>
-      <line x1="10" y1="2" x2="10" y2="18" stroke="#3498db" stroke-width="1"/>
+    <!-- Professional window symbol -->
+    <symbol id="window" viewBox="0 0 30 30">
+      <rect x="2" y="2" width="26" height="26" fill="none" stroke="#1976d2" stroke-width="3"/>
+      <line x1="2" y1="15" x2="28" y2="15" stroke="#1976d2" stroke-width="2"/>
+      <line x1="15" y1="2" x2="15" y2="28" stroke="#1976d2" stroke-width="2"/>
+      <circle cx="15" cy="15" r="2" fill="#1976d2" opacity="0.3"/>
+    </symbol>
+    
+    <!-- Furniture symbols -->
+    <symbol id="bed" viewBox="0 0 40 30">
+      <rect x="2" y="2" width="36" height="26" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2"/>
+      <rect x="5" y="5" width="30" height="20" fill="#c5cae9" stroke="#3f51b5" stroke-width="1"/>
+      <line x1="20" y1="5" x2="20" y2="25" stroke="#3f51b5" stroke-width="1"/>
+    </symbol>
+    
+    <symbol id="sofa" viewBox="0 0 50 30">
+      <rect x="2" y="2" width="46" height="26" fill="#e8f5e8" stroke="#4caf50" stroke-width="2"/>
+      <rect x="5" y="5" width="40" height="20" fill="#c8e6c9" stroke="#4caf50" stroke-width="1"/>
+      <line x1="25" y1="5" x2="25" y2="25" stroke="#4caf50" stroke-width="1"/>
+    </symbol>
+    
+    <symbol id="table" viewBox="0 0 40 40">
+      <rect x="5" y="5" width="30" height="30" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+      <rect x="8" y="8" width="24" height="24" fill="#ffe0b2" stroke="#ff9800" stroke-width="1"/>
     </symbol>
   </defs>
   
-  <!-- Background -->
-  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa"/>
+  <!-- Background with grid -->
+  <rect x="0" y="0" width="1200" height="800" fill="#fafafa"/>
   
-  <!-- Title -->
-  <text x="400" y="30" text-anchor="middle" class="plan-title">Tek Cepheli Küçük Blok - 2+1</text>
+  <!-- Grid system -->
+  <line x1="0" y1="0" x2="0" y2="800" class="grid-line"/><line x1="30" y1="0" x2="30" y2="800" class="grid-line"/><line x1="60" y1="0" x2="60" y2="800" class="grid-line"/><line x1="90" y1="0" x2="90" y2="800" class="grid-line"/><line x1="120" y1="0" x2="120" y2="800" class="grid-line"/><line x1="150" y1="0" x2="150" y2="800" class="grid-line"/><line x1="180" y1="0" x2="180" y2="800" class="grid-line"/><line x1="210" y1="0" x2="210" y2="800" class="grid-line"/><line x1="240" y1="0" x2="240" y2="800" class="grid-line"/><line x1="270" y1="0" x2="270" y2="800" class="grid-line"/><line x1="300" y1="0" x2="300" y2="800" class="grid-line"/><line x1="330" y1="0" x2="330" y2="800" class="grid-line"/><line x1="360" y1="0" x2="360" y2="800" class="grid-line"/><line x1="390" y1="0" x2="390" y2="800" class="grid-line"/><line x1="420" y1="0" x2="420" y2="800" class="grid-line"/><line x1="450" y1="0" x2="450" y2="800" class="grid-line"/><line x1="480" y1="0" x2="480" y2="800" class="grid-line"/><line x1="510" y1="0" x2="510" y2="800" class="grid-line"/><line x1="540" y1="0" x2="540" y2="800" class="grid-line"/><line x1="570" y1="0" x2="570" y2="800" class="grid-line"/><line x1="600" y1="0" x2="600" y2="800" class="grid-line"/><line x1="630" y1="0" x2="630" y2="800" class="grid-line"/><line x1="660" y1="0" x2="660" y2="800" class="grid-line"/><line x1="690" y1="0" x2="690" y2="800" class="grid-line"/><line x1="720" y1="0" x2="720" y2="800" class="grid-line"/><line x1="750" y1="0" x2="750" y2="800" class="grid-line"/><line x1="780" y1="0" x2="780" y2="800" class="grid-line"/><line x1="810" y1="0" x2="810" y2="800" class="grid-line"/><line x1="840" y1="0" x2="840" y2="800" class="grid-line"/><line x1="870" y1="0" x2="870" y2="800" class="grid-line"/><line x1="900" y1="0" x2="900" y2="800" class="grid-line"/><line x1="930" y1="0" x2="930" y2="800" class="grid-line"/><line x1="960" y1="0" x2="960" y2="800" class="grid-line"/><line x1="990" y1="0" x2="990" y2="800" class="grid-line"/><line x1="1020" y1="0" x2="1020" y2="800" class="grid-line"/><line x1="1050" y1="0" x2="1050" y2="800" class="grid-line"/><line x1="1080" y1="0" x2="1080" y2="800" class="grid-line"/><line x1="1110" y1="0" x2="1110" y2="800" class="grid-line"/><line x1="1140" y1="0" x2="1140" y2="800" class="grid-line"/><line x1="1170" y1="0" x2="1170" y2="800" class="grid-line"/><line x1="1200" y1="0" x2="1200" y2="800" class="grid-line"/><line x1="0" y1="0" x2="1200" y2="0" class="grid-line"/><line x1="0" y1="30" x2="1200" y2="30" class="grid-line"/><line x1="0" y1="60" x2="1200" y2="60" class="grid-line"/><line x1="0" y1="90" x2="1200" y2="90" class="grid-line"/><line x1="0" y1="120" x2="1200" y2="120" class="grid-line"/><line x1="0" y1="150" x2="1200" y2="150" class="grid-line"/><line x1="0" y1="180" x2="1200" y2="180" class="grid-line"/><line x1="0" y1="210" x2="1200" y2="210" class="grid-line"/><line x1="0" y1="240" x2="1200" y2="240" class="grid-line"/><line x1="0" y1="270" x2="1200" y2="270" class="grid-line"/><line x1="0" y1="300" x2="1200" y2="300" class="grid-line"/><line x1="0" y1="330" x2="1200" y2="330" class="grid-line"/><line x1="0" y1="360" x2="1200" y2="360" class="grid-line"/><line x1="0" y1="390" x2="1200" y2="390" class="grid-line"/><line x1="0" y1="420" x2="1200" y2="420" class="grid-line"/><line x1="0" y1="450" x2="1200" y2="450" class="grid-line"/><line x1="0" y1="480" x2="1200" y2="480" class="grid-line"/><line x1="0" y1="510" x2="1200" y2="510" class="grid-line"/><line x1="0" y1="540" x2="1200" y2="540" class="grid-line"/><line x1="0" y1="570" x2="1200" y2="570" class="grid-line"/><line x1="0" y1="600" x2="1200" y2="600" class="grid-line"/><line x1="0" y1="630" x2="1200" y2="630" class="grid-line"/><line x1="0" y1="660" x2="1200" y2="660" class="grid-line"/><line x1="0" y1="690" x2="1200" y2="690" class="grid-line"/><line x1="0" y1="720" x2="1200" y2="720" class="grid-line"/><line x1="0" y1="750" x2="1200" y2="750" class="grid-line"/><line x1="0" y1="780" x2="1200" y2="780" class="grid-line"/>
   
-  <!-- North Arrow -->
-  <g transform="translate(740, 60)">
-    <polygon points="0,0 10,20 20,0 10,5" class="north-arrow"/>
-    <text x="10" y="35" text-anchor="middle" class="legend-text">K</text>
-  </g><rect x="40" y="100" width="720" height="460" class="building-outline"/><text x="60" y="95" class="street-marker">SOKAK 1</text><rect x="40" y="100" width="272.72727272727275" height="460" fill="#e3f2fd" stroke="#34495e" stroke-width="2"/>
-            <text x="176.36363636363637" y="330" text-anchor="middle" class="room-label">Salon</text>
-            <text x="176.36363636363637" y="350" text-anchor="middle" class="measurement">25 m²</text><rect x="312.72727272727275" y="100" width="152.72727272727272" height="460" fill="#f3e5f5" stroke="#34495e" stroke-width="2"/>
-            <text x="389.0909090909091" y="330" text-anchor="middle" class="room-label">Ana Yatak</text>
-            <text x="389.0909090909091" y="350" text-anchor="middle" class="measurement">14 m²</text><rect x="465.4545454545455" y="100" width="130.9090909090909" height="460" fill="#e8f5e8" stroke="#34495e" stroke-width="2"/>
-            <text x="530.909090909091" y="330" text-anchor="middle" class="room-label">Çocuk Odası</text>
-            <text x="530.909090909091" y="350" text-anchor="middle" class="measurement">12 m²</text><rect x="50" y="480.3030303030303" width="252.72727272727275" height="69.6969696969697" fill="#fff3e0" stroke="#f39c12" stroke-width="1" stroke-dasharray="5,5"/>
-            <text x="176.36363636363637" y="520.1515151515151" text-anchor="middle" class="room-label">Mutfak</text><rect x="322.72727272727275" y="515.1515151515151" width="132.72727272727272" height="34.84848484848485" fill="#e8f5e8" stroke="#27ae60" stroke-width="1"/>
-            <text x="389.0909090909091" y="537.5757575757576" text-anchor="middle" class="room-label">Banyo</text><use href="#door" x="60" y="530" width="20" height="20"/>
-            <text x="70" y="550" class="measurement">Giriş</text><use href="#window" x="390" y="110" width="20" height="20"/>
-            <use href="#window" x="390" y="530" width="20" height="20"/><rect x="370" y="80" width="60" height="20" class="balcony"/>
-            <text x="400" y="95" text-anchor="middle" class="room-label">Balkon</text><rect x="700" y="480" width="60" height="80" class="stairs"/>
-            <text x="730" y="525" text-anchor="middle" class="room-label">Merdiven</text><rect x="700" y="440" width="60" height="40" class="common-area"/>
-            <text x="730" y="460" text-anchor="middle" class="room-label">Asansör</text><line x1="40" y1="540" x2="40" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="40" y="575" text-anchor="middle" class="measurement">0m</text><line x1="112" y1="540" x2="112" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="112" y="575" text-anchor="middle" class="measurement">7m</text><line x1="184" y1="540" x2="184" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="184" y="575" text-anchor="middle" class="measurement">14m</text><line x1="256" y1="540" x2="256" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="256" y="575" text-anchor="middle" class="measurement">22m</text><line x1="328" y1="540" x2="328" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="328" y="575" text-anchor="middle" class="measurement">29m</text><line x1="400" y1="540" x2="400" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="400" y="575" text-anchor="middle" class="measurement">36m</text><line x1="472" y1="540" x2="472" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="472" y="575" text-anchor="middle" class="measurement">43m</text><line x1="544" y1="540" x2="544" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="544" y="575" text-anchor="middle" class="measurement">50m</text><line x1="616" y1="540" x2="616" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="616" y="575" text-anchor="middle" class="measurement">58m</text><line x1="688" y1="540" x2="688" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="688" y="575" text-anchor="middle" class="measurement">65m</text><line x1="760" y1="540" x2="760" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="760" y="575" text-anchor="middle" class="measurement">72m</text><line x1="20" y1="100" x2="40" y2="100" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="104" text-anchor="middle" class="measurement">0m</text><line x1="20" y1="157.5" x2="40" y2="157.5" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="161.5" text-anchor="middle" class="measurement">6m</text><line x1="20" y1="215" x2="40" y2="215" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="219" text-anchor="middle" class="measurement">12m</text><line x1="20" y1="272.5" x2="40" y2="272.5" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="276.5" text-anchor="middle" class="measurement">17m</text><line x1="20" y1="330" x2="40" y2="330" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="334" text-anchor="middle" class="measurement">23m</text><line x1="20" y1="387.5" x2="40" y2="387.5" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="391.5" text-anchor="middle" class="measurement">29m</text><line x1="20" y1="445" x2="40" y2="445" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="449" text-anchor="middle" class="measurement">35m</text><line x1="20" y1="502.5" x2="40" y2="502.5" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="506.5" text-anchor="middle" class="measurement">40m</text><line x1="20" y1="560" x2="40" y2="560" stroke="#bdc3c7" stroke-width="1"/>
-              <text x="15" y="564" text-anchor="middle" class="measurement">46m</text>
-    <!-- Legend -->
-    <rect x="20" y="480" width="200" height="100" fill="white" stroke="#bdc3c7" stroke-width="1"/>
-    <text x="30" y="495" class="legend-text">Açıklama:</text>
-    <use href="#door" x="30" y="515" width="15" height="15"/>
-    <text x="50" y="525" class="legend-text">Kapı</text>
-    <use href="#window" x="30" y="535" width="15" height="15"/>
-    <text x="50" y="545" class="legend-text">Pencere</text>
-    <rect x="30" y="555" width="15" height="15" class="balcony"/>
-    <text x="50" y="565" class="legend-text">Balkon</text>
-    <rect x="30" y="575" width="15" height="15" class="stairs"/>
-    <text x="50" y="585" class="legend-text">Merdiven</text></svg>
+  <!-- Title with professional styling -->
+  <rect x="20" y="20" width="1160" height="50" fill="white" stroke="#1a237e" stroke-width="2" rx="10"/>
+  <text x="600" y="50" text-anchor="middle" class="plan-title">Tek Cepheli Küçük Blok - 2+1</text>
+  
+  <!-- Professional north arrow -->
+  <g transform="translate(1100, 80)">
+    <circle cx="20" cy="20" r="25" fill="white" stroke="#1a237e" stroke-width="3"/>
+    <polygon points="20,0 30,20 20,15 10,20" class="north-arrow"/>
+    <text x="20" y="45" text-anchor="middle" class="legend-text">K</text>
+    <text x="20" y="60" text-anchor="middle" class="legend-text">KUZEY</text>
+  </g><rect x="60" y="140" width="1080" height="600" class="building-outline" rx="15"/><rect x="80" y="120" width="120" height="30" fill="white" stroke="#d32f2f" stroke-width="2" rx="5"/>
+              <text x="140" y="140" text-anchor="middle" class="street-marker">SOKAK 1</text><rect x="60" y="140" width="395.4929577464789" height="600" fill="#e3f2fd" stroke="#1976d2" stroke-width="3" rx="8"/>
+            <text x="257.7464788732394" y="440" text-anchor="middle" class="room-label">SALON</text>
+            <text x="257.7464788732394" y="465" text-anchor="middle" class="measurement">26 m²</text><rect x="455.4929577464789" y="140" width="212.95774647887322" height="600" fill="#f3e5f5" stroke="#9c27b0" stroke-width="3" rx="8"/>
+            <text x="561.9718309859155" y="440" text-anchor="middle" class="room-label">ANA YATAK</text>
+            <text x="561.9718309859155" y="465" text-anchor="middle" class="measurement">14 m²</text><rect x="668.4507042253522" y="140" width="182.53521126760563" height="600" fill="#e8f5e8" stroke="#4caf50" stroke-width="3" rx="8"/>
+            <text x="759.7183098591549" y="440" text-anchor="middle" class="room-label">ÇOCUK ODASI</text>
+            <text x="759.7183098591549" y="465" text-anchor="middle" class="measurement">12 m²</text><rect x="75" y="640.4929577464789" width="365.4929577464789" height="84.50704225352113" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="5"/>
+            <text x="257.7464788732394" y="692.7464788732394" text-anchor="middle" class="room-label">MUTFAK</text><rect x="470.4929577464789" y="682.7464788732394" width="182.95774647887322" height="42.25352112676057" fill="#e8f5e8" stroke="#388e3c" stroke-width="2" rx="5"/>
+            <text x="561.9718309859155" y="713.8732394366198" text-anchor="middle" class="room-label">BANYO</text><rect x="470.4929577464789" y="155" width="182.95774647887322" height="33.80281690140845" fill="#f5f5f5" stroke="#757575" stroke-width="2" rx="5"/>
+            <text x="561.9718309859155" y="161.90140845070422" text-anchor="middle" class="room-label">KORİDOR</text><use href="#door" x="85" y="705" width="30" height="30"/>
+            <text x="100" y="730" class="measurement">GİRİŞ</text><use href="#window" x="585" y="155" width="30" height="30"/>
+            <use href="#window" x="585" y="695" width="30" height="30"/><rect x="555" y="110" width="90" height="30" class="balcony" rx="5"/>
+            <text x="600" y="130" text-anchor="middle" class="room-label">BALKON</text><rect x="1060" y="640" width="80" height="100" class="stairs" rx="10"/>
+            <text x="1100" y="690" text-anchor="middle" class="room-label">MERDİVEN</text><rect x="1060" y="600" width="80" height="40" class="common-area" rx="8"/>
+            <text x="1100" y="620" text-anchor="middle" class="room-label">ASANSÖR</text><rect x="940" y="640" width="120" height="100" fill="#e8eaf6" stroke="#3f51b5" stroke-width="3" rx="10"/>
+            <text x="1000" y="690" text-anchor="middle" class="room-label">LOBBY</text><line x1="60" y1="710" x2="60" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="60" y="760" text-anchor="middle" class="measurement">0m</text><line x1="150" y1="710" x2="150" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="150" y="760" text-anchor="middle" class="measurement">6m</text><line x1="240" y1="710" x2="240" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="240" y="760" text-anchor="middle" class="measurement">12m</text><line x1="330" y1="710" x2="330" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="330" y="760" text-anchor="middle" class="measurement">18m</text><line x1="420" y1="710" x2="420" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="420" y="760" text-anchor="middle" class="measurement">24m</text><line x1="510" y1="710" x2="510" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="510" y="760" text-anchor="middle" class="measurement">30m</text><line x1="600" y1="710" x2="600" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="600" y="760" text-anchor="middle" class="measurement">36m</text><line x1="690" y1="710" x2="690" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="690" y="760" text-anchor="middle" class="measurement">42m</text><line x1="780" y1="710" x2="780" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="780" y="760" text-anchor="middle" class="measurement">48m</text><line x1="870" y1="710" x2="870" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="870" y="760" text-anchor="middle" class="measurement">54m</text><line x1="960" y1="710" x2="960" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="960" y="760" text-anchor="middle" class="measurement">60m</text><line x1="1050" y1="710" x2="1050" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="1050" y="760" text-anchor="middle" class="measurement">66m</text><line x1="1140" y1="710" x2="1140" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="1140" y="760" text-anchor="middle" class="measurement">72m</text><line x1="30" y1="140" x2="60" y2="140" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="145" text-anchor="middle" class="measurement">0m</text><line x1="30" y1="200" x2="60" y2="200" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="205" text-anchor="middle" class="measurement">4m</text><line x1="30" y1="260" x2="60" y2="260" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="265" text-anchor="middle" class="measurement">8m</text><line x1="30" y1="320" x2="60" y2="320" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="325" text-anchor="middle" class="measurement">12m</text><line x1="30" y1="380" x2="60" y2="380" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="385" text-anchor="middle" class="measurement">16m</text><line x1="30" y1="440" x2="60" y2="440" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="445" text-anchor="middle" class="measurement">20m</text><line x1="30" y1="500" x2="60" y2="500" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="505" text-anchor="middle" class="measurement">24m</text><line x1="30" y1="560" x2="60" y2="560" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="565" text-anchor="middle" class="measurement">28m</text><line x1="30" y1="620" x2="60" y2="620" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="625" text-anchor="middle" class="measurement">32m</text><line x1="30" y1="680" x2="60" y2="680" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="685" text-anchor="middle" class="measurement">36m</text><line x1="30" y1="740" x2="60" y2="740" stroke="#546e7a" stroke-width="2"/>
+              <text x="25" y="745" text-anchor="middle" class="measurement">40m</text>
+    <!-- Professional Legend -->
+    <rect x="30" y="620" width="280" height="150" fill="white" stroke="#1a237e" stroke-width="3" rx="10"/>
+    <text x="50" y="640" class="legend-text" style="font-size: 18px; font-weight: bold;">MİMARİ SEMBOLLER</text>
+    
+    <!-- Doors -->
+    <use href="#door" x="50" y="660" width="20" height="20"/>
+    <text x="80" y="675" class="legend-text">Kapı</text>
+    
+    <!-- Windows -->
+    <use href="#window" x="50" y="690" width="20" height="20"/>
+    <text x="80" y="705" class="legend-text">Pencere</text>
+    
+    <!-- Balcony -->
+    <rect x="50" y="720" width="20" height="20" class="balcony"/>
+    <text x="80" y="735" class="legend-text">Balkon</text>
+    
+    <!-- Stairs -->
+    <rect x="50" y="750" width="20" height="20" class="stairs"/>
+    <text x="80" y="765" class="legend-text">Merdiven</text>
+    
+    <!-- Furniture -->
+    <use href="#bed" x="150" y="660" width="20" height="20"/>
+    <text x="180" y="675" class="legend-text">Yatak</text>
+    
+    <use href="#sofa" x="150" y="690" width="20" height="20"/>
+    <text x="180" y="705" class="legend-text">Koltuk</text>
+    
+    <use href="#table" x="150" y="720" width="20" height="20"/>
+    <text x="180" y="735" class="legend-text">Masa</text><use href="#sofa" x="160" y="180" width="40" height="30"/>
+              <use href="#table" x="210" y="220" width="30" height="30"/><use href="#bed" x="460" y="180" width="40" height="30"/>
+              <use href="#table" x="510" y="220" width="30" height="30"/><use href="#bed" x="660" y="180" width="40" height="30"/>
+              <use href="#table" x="710" y="220" width="30" height="30"/></svg>

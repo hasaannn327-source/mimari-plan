@@ -8,6 +8,7 @@
     "dev": "nodemon server.js",
     "generate-plans": "node generatePlans.js",
     "generate-advanced-plans": "node generateAdvancedPlans.js",
+    "generate-professional-plans": "node generateProfessionalPlans.js",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
