@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Köşe Büyük Blok - 3+1</title>
+    <link rel="stylesheet" href="3d-plan.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="plan-header">
+            <h1>🏗️ Köşe Büyük Blok - 3+1</h1>
+            <div class="plan-info">
+                <span class="info-item">📐 3+1</span>
+                <span class="info-item">🏠 2 Cephe</span>
+                <span class="info-item">📏 600-1200 m²</span>
+            </div>
+        </header>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <label>Kamera Kontrolü:</label>
+                <button id="resetCamera" class="control-btn">🔄 Sıfırla</button>
+                <button id="topView" class="control-btn">⬆️ Üstten</button>
+                <button id="sideView" class="control-btn">➡️ Yan</button>
+                <button id="perspectiveView" class="control-btn">👁️ Perspektif</button>
+            </div>
+            
+            <div class="control-group">
+                <label>Görünüm:</label>
+                <button id="toggleWalls" class="control-btn active">🧱 Duvarlar</button>
+                <button id="toggleFurniture" class="control-btn active">🪑 Mobilya</button>
+                <button id="toggleLighting" class="control-btn active">💡 Işık</button>
+                <button id="toggleShadows" class="control-btn active">🌑 Gölge</button>
+            </div>
+
+            <div class="control-group">
+                <label>Kalite:</label>
+                <button id="lowQuality" class="control-btn">📱 Düşük</button>
+                <button id="mediumQuality" class="control-btn active">💻 Orta</button>
+                <button id="highQuality" class="control-btn">🚀 Yüksek</button>
+            </div>
+        </div>
+
+        <div class="viewer-container">
+            <div id="3dScene" class="scene"></div>
+            
+            <div class="info-panel">
+                <div class="room-info">
+                    <h3>🏠 Oda Bilgileri</h3>
+                    <div id="roomDetails"></div>
+                </div>
+                
+                <div class="measurements">
+                    <h3>📏 Ölçüler</h3>
+                    <div id="measurementDetails"></div>
+                </div>
+                
+                <div class="features">
+                    <h3>✨ Özellikler</h3>
+                    <ul>
+                        <li>Lüks daire planları</li><li>Geniş balkon alanları</li><li>İki cephe avantajı</li><li>Prestijli yaşam</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-panel">
+            <button id="exportImage" class="action-btn">📸 Resim İndir</button>
+            <button id="export3D" class="action-btn">📦 3D Model İndir</button>
+            <button id="sharePlan" class="action-btn">📤 Paylaş</button>
+            <button id="printPlan" class="action-btn">🖨️ Yazdır</button>
+        </div>
+    </div>
+
+    <script src="3d-plan.js"></script>
+</body>
+</html>

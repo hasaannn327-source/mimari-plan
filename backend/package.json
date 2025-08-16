@@ -9,6 +9,8 @@
     "generate-plans": "node generatePlans.js",
     "generate-advanced-plans": "node generateAdvancedPlans.js",
     "generate-professional-plans": "node generateProfessionalPlans.js",
+    "generate-3d-plans": "node generate3DPlans.js",
+    "generate-smart-furniture": "node generateSmartFurniture.js",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
