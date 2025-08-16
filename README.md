@@ -1,6 +1,6 @@
-# 🏢 Mimari Kat Planı Öneri Sistemi
+# 🏢 Mimari Kat Planı Öneri Sistemi - PWA
 
-Modern web tabanlı mimari kat planı öneri sistemi. Kullanıcı girdilerine göre uygun kat planları öneren Türkçe arayüzlü uygulama.
+Modern web tabanlı mimari kat planı öneri sistemi. Kullanıcı girdilerine göre uygun kat planları öneren Türkçe arayüzlü uygulama. **Offline çalışabilen ve kolay deploy edilebilen PWA (Progressive Web App)** özelliklerine sahiptir.
 
 ## ✨ Özellikler
 
@@ -23,37 +23,59 @@ Modern web tabanlı mimari kat planı öneri sistemi. Kullanıcı girdilerine g�
 - **Modern Türkçe arayüz**
 - **Real-time hesaplama**
 
+### 🚀 PWA Özellikleri
+- **Offline çalışma** (Service Worker ile)
+- **Ana ekrana ekleme** (Install prompt)
+- **Push notifications** desteği
+- **App-like deneyim** (Standalone mode)
+- **Cache yönetimi** (Akıllı offline storage)
+
 ## 🚀 Kurulum
 
 ### Gereksinimler
 - Node.js (v14+)
-- Modern web tarayıcısı
+- Modern web tarayıcısı (PWA desteği için)
 
-### Adımlar
+### Hızlı Başlangıç
 
-1. **Projeyi klonlayın**
+#### 1. Otomatik Deploy (Önerilen)
+```bash
+# Deploy script'ini çalıştırın
+./deploy.sh
+
+# Seçeneklerden birini seçin:
+# 1) Local Development
+# 2) Static Hosting (GitHub Pages, Netlify, Vercel)
+# 3) Docker Container
+# 4) Production Server
+# 5) Cloud Platform (AWS, GCP, Azure)
+```
+
+#### 2. Manuel Kurulum
+
+**Projeyi klonlayın**
 ```bash
 git clone <repo-url>
 cd architectural-floor-plan-system
 ```
 
-2. **Backend bağımlılıklarını yükleyin**
+**Backend bağımlılıklarını yükleyin**
 ```bash
 cd backend
 npm install
 ```
 
-3. **Plan görsellerini oluşturun**
+**Plan görsellerini oluşturun**
 ```bash
 npm run generate-plans
 ```
 
-4. **Sunucuyu başlatın**
+**Sunucuyu başlatın**
 ```bash
 npm start
 ```
 
-5. **Frontend'i açın**
+**Frontend'i açın**
 - `frontend/index.html` dosyasını tarayıcıda açın
 - Veya bir HTTP sunucusu kullanın:
 ```bash
@@ -76,9 +98,13 @@ npx serve .
 │   ├── server.js                # Express sunucusu
 │   └── generatePlans.js         # Plan oluşturma scripti
 ├── 📁 frontend/
-│   ├── index.html               # Ana sayfa
-│   ├── script.js                # Frontend JavaScript
-│   └── style.css                # Modern CSS stilleri
+│   ├── 📁 icons/                # PWA icon'ları
+│   ├── index.html               # Ana sayfa (PWA meta tags ile)
+│   ├── script.js                # Frontend JavaScript (PWA özellikleri ile)
+│   ├── style.css                # Modern CSS stilleri
+│   ├── sw.js                    # Service Worker (offline çalışma)
+│   └── manifest.json            # PWA manifest dosyası
+├── deploy.sh                    # Otomatik deploy script'i
 └── README.md
 ```
 
@@ -206,6 +232,53 @@ npm run dev  # nodemon ile auto-restart
 - **Modern UI/UX** - Gradient ve animasyonlar
 - **Akıllı filtreleme** - Çoklu kriter desteği
 - **SVG planlar** - Ölçeklenebilir görseller
+- **🚀 PWA desteği** - Offline çalışma ve ana ekrana ekleme
+- **📱 Mobil uygulama deneyimi** - App-like kullanım
+- **💾 Offline storage** - İnternet olmadan da çalışır
+- **🔧 Kolay deploy** - Tek script ile çoklu platform desteği
+
+## 🚀 Deploy Seçenekleri
+
+### 1. Otomatik Deploy (En Kolay)
+```bash
+./deploy.sh
+```
+
+### 2. Static Hosting (GitHub Pages, Netlify, Vercel)
+- Frontend dosyaları otomatik olarak hazırlanır
+- PWA özellikleri korunur
+- HTTPS otomatik olarak sağlanır
+
+### 3. Docker Container
+- Tam containerized uygulama
+- Production-ready
+- Kolay scaling
+
+### 4. Production Server
+- Nginx konfigürasyonu
+- Systemd service
+- SSL sertifika desteği
+
+### 5. Cloud Platform
+- AWS CloudFormation template
+- Terraform configuration
+- S3 + CloudFront setup
+
+## 📱 PWA Özellikleri
+
+### Offline Çalışma
+- Service Worker ile cache yönetimi
+- Tüm statik dosyalar offline'da erişilebilir
+- API çağrıları cache'lenir
+
+### Ana Ekrana Ekleme
+- Install prompt otomatik gösterilir
+- App-like deneyim
+- Standalone mode
+
+### Push Notifications
+- Yeni plan önerileri için bildirimler
+- Background sync desteği
 
 ## 📝 Lisans
 

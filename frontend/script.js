@@ -218,4 +218,185 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     calculateAndSuggestPlan();
   }, 500);
+
+  // PWA Features
+  initializePWA();
 });
+
+// PWA Initialization
+function initializePWA() {
+  // Service Worker Registration
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('SW registered: ', registration);
+        })
+        .catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
+  }
+
+  // Install Prompt
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    showInstallPrompt();
+  });
+
+  // App installed
+  window.addEventListener('appinstalled', () => {
+    hideInstallPrompt();
+    showNotification('Uygulama başarıyla yüklendi!', 'success');
+  });
+
+  // Offline Detection
+  window.addEventListener('online', () => {
+    hideOfflineIndicator();
+  });
+
+  window.addEventListener('offline', () => {
+    showOfflineIndicator();
+  });
+
+  // Check initial status
+  if (!navigator.onLine) {
+    showOfflineIndicator();
+  }
+
+  // Install button click
+  document.getElementById('installBtn').addEventListener('click', () => {
+    installApp();
+  });
+
+  // Dismiss install prompt
+  document.getElementById('dismissInstall').addEventListener('click', () => {
+    hideInstallPrompt();
+  });
+}
+
+// PWA Functions
+function showInstallPrompt() {
+  document.getElementById('installPrompt').classList.add('show');
+}
+
+function hideInstallPrompt() {
+  document.getElementById('installPrompt').classList.remove('show');
+}
+
+function showOfflineIndicator() {
+  document.getElementById('offlineIndicator').classList.add('show');
+}
+
+function hideOfflineIndicator() {
+  document.getElementById('offlineIndicator').classList.remove('show');
+}
+
+async function installApp() {
+  if (!window.deferredPrompt) return;
+
+  window.deferredPrompt.prompt();
+  const { outcome } = await window.deferredPrompt.userChoice;
+  
+  if (outcome === 'accepted') {
+    hideInstallPrompt();
+  }
+  
+  window.deferredPrompt = null;
+}
+
+function showNotification(message, type = 'info') {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.innerHTML = `
+    <div class="notification-content">
+      <span class="notification-icon">${getNotificationIcon(type)}</span>
+      <span class="notification-message">${message}</span>
+      <button class="notification-close">&times;</button>
+    </div>
+  `;
+
+  // Add styles
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    z-index: 10000;
+    max-width: 300px;
+    animation: slideInRight 0.3s ease;
+  `;
+
+  // Add notification styles
+  const style = document.createElement('style');
+  style.textContent = `
+    .notification-content {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .notification-icon {
+      font-size: 1.2rem;
+    }
+    .notification-message {
+      flex: 1;
+      color: #2c3e50;
+    }
+    .notification-close {
+      background: none;
+      border: none;
+      color: #95a5a6;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0.25rem;
+      border-radius: 4px;
+    }
+    .notification-close:hover {
+      background: #ecf0f1;
+      color: #2c3e50;
+    }
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Add close functionality
+  notification.querySelector('.notification-close').addEventListener('click', () => {
+    notification.remove();
+  });
+
+  // Add to page
+  document.body.appendChild(notification);
+
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.remove();
+    }
+  }, 5000);
+}
+
+function getNotificationIcon(type) {
+  const icons = {
+    success: '✅',
+    error: '❌',
+    warning: '⚠️',
+    info: 'ℹ️'
+  };
+  return icons[type] || icons.info;
+}

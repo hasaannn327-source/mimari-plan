@@ -448,3 +448,120 @@ header p {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
 }
+
+/* Offline Indicator */
+.offline-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #f39c12;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(243, 156, 18, 0.3);
+  z-index: 1000;
+  animation: slideInUp 0.3s ease;
+}
+
+.offline-indicator.show {
+  display: flex;
+}
+
+.offline-icon {
+  font-size: 18px;
+}
+
+/* Install Prompt */
+.install-prompt {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border: 2px solid #667eea;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  display: none;
+  align-items: center;
+  gap: 12px;
+  max-width: 300px;
+  z-index: 1000;
+  animation: slideInUp 0.3s ease;
+}
+
+.install-prompt.show {
+  display: flex;
+}
+
+.install-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.install-icon {
+  font-size: 24px;
+}
+
+.install-text {
+  color: #2c3e50;
+  font-size: 14px;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.install-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.install-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.dismiss-btn {
+  background: none;
+  border: none;
+  color: #95a5a6;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.dismiss-btn:hover {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+/* Responsive adjustments for offline elements */
+@media (max-width: 768px) {
+  .offline-indicator {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    max-width: none;
+  }
+  
+  .install-prompt {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    max-width: none;
+  }
+}
