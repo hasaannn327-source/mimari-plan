@@ -1,38 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .plan-title { font: bold 18px Arial; fill: #34495e; }
-      .room-label { font: 12px Arial; fill: #34495e; }
-      .spec-text { font: 10px Arial; fill: #7f8c8d; }
-      .building-outline { fill: #fff3e0; stroke: #2c3e50; stroke-width: 2; }
-      .room-divider { stroke: #2c3e50; stroke-width: 1; fill: none; }
-      .street-marker { fill: #e74c3c; font: bold 10px Arial; }
+      .plan-title { font: bold 24px 'Segoe UI', Arial; fill: #2c3e50; }
+      .room-label { font: bold 14px 'Segoe UI', Arial; fill: #34495e; }
+      .measurement { font: 12px 'Segoe UI', Arial; fill: #7f8c8d; }
+      .legend-text { font: 12px 'Segoe UI', Arial; fill: #2c3e50; }
+      .building-outline { fill: #fff3e0; stroke: #2c3e50; stroke-width: 3; }
+      .room-divider { stroke: #34495e; stroke-width: 2; fill: none; }
+      .door-line { stroke: #e74c3c; stroke-width: 3; fill: none; stroke-dasharray: 5,5; }
+      .window-line { stroke: #3498db; stroke-width: 2; fill: none; }
+      .balcony { fill: #a8e6cf; stroke: #27ae60; stroke-width: 2; }
+      .common-area { fill: #ffeaa7; stroke: #fdcb6e; stroke-width: 2; }
+      .stairs { fill: #dda0dd; stroke: #9b59b6; stroke-width: 2; }
+      .street-marker { fill: #e74c3c; font: bold 14px Arial; }
+      .north-arrow { fill: #2c3e50; }
     </style>
+    
+    <!-- Door symbol -->
+    <symbol id="door" viewBox="0 0 20 20">
+      <rect x="2" y="2" width="16" height="16" fill="none" stroke="#e74c3c" stroke-width="2"/>
+      <circle cx="15" cy="10" r="2" fill="#e74c3c"/>
+    </symbol>
+    
+    <!-- Window symbol -->
+    <symbol id="window" viewBox="0 0 20 20">
+      <rect x="2" y="2" width="16" height="16" fill="none" stroke="#3498db" stroke-width="2"/>
+      <line x1="2" y1="10" x2="18" y2="10" stroke="#3498db" stroke-width="1"/>
+      <line x1="10" y1="2" x2="10" y2="18" stroke="#3498db" stroke-width="1"/>
+    </symbol>
   </defs>
   
   <!-- Background -->
-  <rect x="0" y="0" width="600" height="400" fill="#ecf0f1"/>
+  <rect x="0" y="0" width="800" height="600" fill="#f8f9fa"/>
   
   <!-- Title -->
-  <text x="300" y="25" text-anchor="middle" class="plan-title">Lüks Köşe Blok - 4+1</text>
+  <text x="400" y="30" text-anchor="middle" class="plan-title">Lüks Köşe Blok - 4+1</text>
   
-  <!-- Main building outline -->
-  <rect x="20" y="50" width="560" height="300" class="building-outline"/><text x="30" y="45" class="street-marker">SOKAK</text><text x="540" y="45" class="street-marker">SOKAK</text>
-      <line x1="132" y1="50" x2="132" y2="300" class="room-divider"/>
-      <line x1="244" y1="50" x2="244" y2="300" class="room-divider"/>
-      <line x1="356" y1="50" x2="356" y2="300" class="room-divider"/>
-      <line x1="468" y1="50" x2="468" y2="300" class="room-divider"/>
-      <line x1="20" y1="133.33333333333331" x2="580" y2="133.33333333333331" class="room-divider"/>
-      <line x1="20" y1="216.66666666666666" x2="580" y2="216.66666666666666" class="room-divider"/>
-      
-      <text x="76" y="91.66666666666666" text-anchor="middle" class="room-label">Giriş</text>
-      <text x="188" y="91.66666666666666" text-anchor="middle" class="room-label">Salon</text>
-      <text x="76" y="175" text-anchor="middle" class="room-label">Mutfak</text>
-      <text x="188" y="175" text-anchor="middle" class="room-label">Ana Yatak</text>
-      <text x="300" y="175" text-anchor="middle" class="room-label">Yatak Odası 2</text>
-      <text x="412" y="175" text-anchor="middle" class="room-label">Yatak Odası 3</text>
-      <text x="524" y="175" text-anchor="middle" class="room-label">Yatak Odası 4</text>
-    
-    <text x="20" y="380" class="spec-text">Alan: 800-1600 m² | Cephe: 2 | Tahmini: 6-11 daire</text>
-  </svg>
+  <!-- North Arrow -->
+  <g transform="translate(740, 60)">
+    <polygon points="0,0 10,20 20,0 10,5" class="north-arrow"/>
+    <text x="10" y="35" text-anchor="middle" class="legend-text">K</text>
+  </g><rect x="40" y="100" width="720" height="460" class="building-outline"/><text x="60" y="95" class="street-marker">SOKAK 1</text><text x="680" y="95" class="street-marker">SOKAK 2</text><rect x="40" y="100" width="215.3846153846154" height="460" fill="#e3f2fd" stroke="#34495e" stroke-width="2"/>
+            <text x="147.69230769230768" y="330" text-anchor="middle" class="room-label">Salon</text>
+            <text x="147.69230769230768" y="350" text-anchor="middle" class="measurement">35 m²</text><rect x="255.3846153846154" y="100" width="110.76923076923077" height="460" fill="#f3e5f5" stroke="#34495e" stroke-width="2"/>
+            <text x="310.7692307692308" y="330" text-anchor="middle" class="room-label">Ana Yatak</text>
+            <text x="310.7692307692308" y="350" text-anchor="middle" class="measurement">18 m²</text><rect x="366.1538461538462" y="100" width="98.46153846153847" height="460" fill="#e8f5e8" stroke="#34495e" stroke-width="2"/>
+            <text x="415.3846153846154" y="330" text-anchor="middle" class="room-label">Çocuk Odası</text>
+            <text x="415.3846153846154" y="350" text-anchor="middle" class="measurement">16 m²</text><rect x="50" y="491.02564102564105" width="195.3846153846154" height="58.97435897435897" fill="#fff3e0" stroke="#f39c12" stroke-width="1" stroke-dasharray="5,5"/>
+            <text x="147.69230769230768" y="525.5128205128206" text-anchor="middle" class="room-label">Mutfak</text><rect x="265.38461538461536" y="522.4786324786324" width="90.76923076923077" height="27.521367521367523" fill="#e8f5e8" stroke="#27ae60" stroke-width="1"/>
+            <text x="310.7692307692308" y="541.2393162393163" text-anchor="middle" class="room-label">Banyo</text><use href="#door" x="60" y="530" width="20" height="20"/>
+            <text x="70" y="550" class="measurement">Giriş</text><use href="#window" x="390" y="110" width="20" height="20"/>
+            <use href="#window" x="390" y="530" width="20" height="20"/><rect x="370" y="80" width="60" height="20" class="balcony"/>
+            <text x="400" y="95" text-anchor="middle" class="room-label">Balkon</text><text x="400" y="580" text-anchor="middle" class="measurement">4+1 Layout - 117 m²</text><rect x="700" y="480" width="60" height="80" class="stairs"/>
+            <text x="730" y="525" text-anchor="middle" class="room-label">Merdiven</text><rect x="700" y="440" width="60" height="40" class="common-area"/>
+            <text x="730" y="460" text-anchor="middle" class="room-label">Asansör</text><line x1="40" y1="540" x2="40" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="40" y="575" text-anchor="middle" class="measurement">0m</text><line x1="112" y1="540" x2="112" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="112" y="575" text-anchor="middle" class="measurement">7m</text><line x1="184" y1="540" x2="184" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="184" y="575" text-anchor="middle" class="measurement">14m</text><line x1="256" y1="540" x2="256" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="256" y="575" text-anchor="middle" class="measurement">22m</text><line x1="328" y1="540" x2="328" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="328" y="575" text-anchor="middle" class="measurement">29m</text><line x1="400" y1="540" x2="400" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="400" y="575" text-anchor="middle" class="measurement">36m</text><line x1="472" y1="540" x2="472" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="472" y="575" text-anchor="middle" class="measurement">43m</text><line x1="544" y1="540" x2="544" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="544" y="575" text-anchor="middle" class="measurement">50m</text><line x1="616" y1="540" x2="616" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="616" y="575" text-anchor="middle" class="measurement">58m</text><line x1="688" y1="540" x2="688" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="688" y="575" text-anchor="middle" class="measurement">65m</text><line x1="760" y1="540" x2="760" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="760" y="575" text-anchor="middle" class="measurement">72m</text><line x1="20" y1="100" x2="40" y2="100" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="104" text-anchor="middle" class="measurement">0m</text><line x1="20" y1="157.5" x2="40" y2="157.5" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="161.5" text-anchor="middle" class="measurement">6m</text><line x1="20" y1="215" x2="40" y2="215" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="219" text-anchor="middle" class="measurement">12m</text><line x1="20" y1="272.5" x2="40" y2="272.5" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="276.5" text-anchor="middle" class="measurement">17m</text><line x1="20" y1="330" x2="40" y2="330" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="334" text-anchor="middle" class="measurement">23m</text><line x1="20" y1="387.5" x2="40" y2="387.5" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="391.5" text-anchor="middle" class="measurement">29m</text><line x1="20" y1="445" x2="40" y2="445" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="449" text-anchor="middle" class="measurement">35m</text><line x1="20" y1="502.5" x2="40" y2="502.5" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="506.5" text-anchor="middle" class="measurement">40m</text><line x1="20" y1="560" x2="40" y2="560" stroke="#bdc3c7" stroke-width="1"/>
+              <text x="15" y="564" text-anchor="middle" class="measurement">46m</text>
+    <!-- Legend -->
+    <rect x="20" y="480" width="200" height="100" fill="white" stroke="#bdc3c7" stroke-width="1"/>
+    <text x="30" y="495" class="legend-text">Açıklama:</text>
+    <use href="#door" x="30" y="515" width="15" height="15"/>
+    <text x="50" y="525" class="legend-text">Kapı</text>
+    <use href="#window" x="30" y="535" width="15" height="15"/>
+    <text x="50" y="545" class="legend-text">Pencere</text>
+    <rect x="30" y="555" width="15" height="15" class="balcony"/>
+    <text x="50" y="565" class="legend-text">Balkon</text>
+    <rect x="30" y="575" width="15" height="15" class="stairs"/>
+    <text x="50" y="585" class="legend-text">Merdiven</text></svg>

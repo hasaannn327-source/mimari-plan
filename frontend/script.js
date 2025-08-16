@@ -146,25 +146,68 @@ document.addEventListener("DOMContentLoaded", function () {
       displayPlan(planData);
       
     } catch (error) {
-      showError("Girilen kriterlere uygun plan bulunamadı. Lütfen farklı değerler deneyin.");
+      // Offline mode - try to show cached plan or generate basic layout
+      console.log('API erişimi yok, offline mod aktif');
+      showOfflinePlan(netUsableArea, streetFacingSides, apartmentType);
     }
+  }
+
+  function showOfflinePlan(netUsableArea, streetFacingSides, apartmentType) {
+    // Generate basic plan layout for offline use
+    const plan = {
+      id: 'offline_plan',
+      name: `Offline Plan - ${apartmentType}`,
+      apartmentType: apartmentType,
+      streetFacingSides: streetFacingSides,
+      minUsableArea: netUsableArea * 0.8,
+      maxUsableArea: netUsableArea * 1.2,
+      estimatedApartments: Math.floor(netUsableArea / getApartmentArea(apartmentType)),
+      description: 'Bu plan offline modda oluşturulmuştur. Gerçek plan için internet bağlantısı gerekir.',
+      features: ['Offline oluşturuldu', 'Temel düzen', 'Gerçek plan için internet gerekli'],
+      image: null
+    };
+    
+    displayPlan(plan);
+  }
+
+  function getApartmentArea(apartmentType) {
+    const areas = {
+      "1+1": 60,
+      "2+1": 85,
+      "3+1": 110,
+      "4+1": 140
+    };
+    return areas[apartmentType] || 85;
   }
 
   function displayPlan(plan) {
     // Hide placeholder and show image
     planPlaceholder.style.display = "none";
     planImage.style.display = "block";
-    planImage.src = plan.image;
-    planImage.onerror = function() {
-      // If image fails to load, show placeholder with plan name
+    
+    if (plan.image) {
+      // Try to load the plan image
+      planImage.src = plan.image;
+      planImage.onerror = function() {
+        // If image fails to load, show placeholder with plan name
+        planImage.style.display = "none";
+        planPlaceholder.style.display = "flex";
+        planPlaceholder.innerHTML = `
+          <span>🏗️</span>
+          <p><strong>${plan.name}</strong></p>
+          <small>Plan görseli hazırlanıyor</small>
+        `;
+      };
+    } else {
+      // No image available, show placeholder
       planImage.style.display = "none";
       planPlaceholder.style.display = "flex";
       planPlaceholder.innerHTML = `
-        <span>🏗️</span>
+        <span>📐</span>
         <p><strong>${plan.name}</strong></p>
-        <small>Plan görseli hazırlanıyor</small>
+        <small>${plan.description}</small>
       `;
-    };
+    }
     
     // Display plan details
     planDetails.innerHTML = `
